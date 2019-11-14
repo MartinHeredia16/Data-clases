@@ -1,0 +1,61 @@
+INDICE EDUCACIÓN INTERMEDIA
+
+```{r}
+#traemos la data de github
+EDUINTER="https://github.com/MartinHeredia16/Data-clases/blob/master/Educacion%20Intermedia.xls?raw=true"
+DataEduInter=import(EDUINTER)
+
+```
+```{r}
+#transformamos a numericos ciertas variables
+DataEduInter[,c(5:34)]=lapply(DataEduInter[,c(5:34)],as.numeric)
+```
+```{r}
+#confirmamos
+str(DataEduInter)
+```
+
+```{r}
+#cambiamos el nombre de country name a pais
+names(DataEduInter)[1]= "Pais"
+```
+
+```{r}
+#borramos columnasque no nos sirven 
+DataEduInter[,c(2:50)]= NULL
+
+```
+```{r}
+DataEduInter[,(2:10)]= NULL
+```
+```{r}
+DataEduInter[,c(2,4,5)]= NULL
+```
+
+
+```{r}
+#limpiamos filas que no nos interesan como conjuntos de paises o algun otro parecido
+DataEduInter=DataEduInter[-c(6,35,48,60,61,62,63,64,67,72,73,94,97,101,102,103,104,106,107,109,127,133,134,135,138,139,141,152,155,160,169,180,182,190,196,197,203,214,217,229,230,235,237,239,240,248,254,255,258),]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
